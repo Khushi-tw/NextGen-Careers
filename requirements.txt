@@ -1,2 +1,6 @@
 Flask
 Gunicorn
+SQLAlchemy
+pymysql
+python-dotenv
+Flask-Cors  
