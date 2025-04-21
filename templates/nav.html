@@ -1,43 +1,33 @@
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm sticky-top">
-    <div class="container-fluid">
-      <!-- Left: Brand -->
-      <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="/static/logo.png" alt="Logo" width="40" height="40" class="me-2">
-        NextGen 
-      </a>
-  
-      <!-- Toggle for Mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <!-- Navbar Content -->
-      <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
-        
-        <!-- Center: Navigation Links -->
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#jobs">Jobs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-  
-        <!-- Right: Search Bar -->
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search jobs" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
-      </div>
+<!-- Standalone Beautiful Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="/">
+      <img src="/static/logo.png" alt="Logo" width="40" height="40" class="me-2">
+      NextGen Careers
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="/"> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/"> Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about"> About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact"> Contact</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search jobs" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
     </div>
-  </nav>
-  <!-- Navbar End -->
-  
+  </div>
+</nav>

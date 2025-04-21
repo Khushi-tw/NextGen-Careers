@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }} {{ company_name }} Careers</title>
+    {% include 'bootstrap.html' %}
+    <style>
+        .job-details {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        }
+        .job-details h2 {
+            color: #212529;
+        }
+        .job-details h3 {
+            margin-top: 1.5rem;
+            color: #0d6efd;
+        }
+        .job-details h4 {
+            margin-top: 2rem;
+            color: #198754;
+        }
+        .job-details ul {
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        .job-details li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+  <header class="mb-4">{% include 'nav.html' %}</header>
+
+  <main class="container mt-5">
+    <div class="job-details">
+        
+        <h3>Title</h3>
+        <p>{{ job.title }}</p>
+
+        <h3>Location</h3>
+        <p>{{ job.location }}</p>
+
+        <h3>Salary</h3>
+        <p>{{ job.currency }} {{ '{:,}'.format(job.salary) }}</p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+            {% for line in job.responsibilities.split('\n') %}
+            <li>{{ line[2:] }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Requirements</h3>
+        <ul>
+            {% for line in job.requirements.split('\n') %}
+            <li>{{ line[2:]}}</li>
+            {% endfor %}
+        </ul>
+
+        <hr class="my-4">
+        <h3 class="mb-3">Apply Now</h3>
+        {% include 'application_form.html' %}
+    </div>
+  </main>
+</body>
+</html>

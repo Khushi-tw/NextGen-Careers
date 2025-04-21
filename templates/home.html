@@ -4,28 +4,64 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Careers Page</title>
-  
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   
-  <style> 
+  <style>
+    /* Banner image styling */
     #banner {
       height: 360px;
       width: 100%;
       object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Styling for headings */
+    h1, h2 {
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    /* Text and Section Spacing */
+    .lead {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Job item styling */
+    .job-item {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 
-<body>
+<body class="bg-light">
+  <!-- Navigation -->
   <div>
     {% include 'nav.html' %}
   </div>
-  <div class="container">
-    <h1 class="text-center mt-2 mb-4">{{ company_name }} Careers</h1>
-    <img class="img-fluid" id="banner" src="/static/photo.jpg" height="320" alt="Careers Banner">
 
-    <br><br>
-    <h2 class="text-center mt-2 mb-4">About NextGen Careers</h2>
+  <div class="container my-5">
+    <img class="img-fluid" id="banner" src="/static/photo.jpg" alt="Careers Banner">
+
+    <!-- About Section -->
+    <h2 class="text-center mt-4">About NextGen Careers</h2>
     <p class="lead">
       At NextGen Careers, we believe that the future of work is dynamic, innovative, and full of possibilities. Our mission is to bridge the gap between top-tier talent and visionary employers by providing a seamless, tech-driven, and personalized job search experience.
     </p>
@@ -42,22 +78,28 @@
       The future of work starts here. Join NextGen Careers today and take the next big step toward success.
     </p>
 
-    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-
-    <div>
+    <!-- Open Positions Section -->
+    <h2 class="text-center mt-4">Open Positions</h2>
+    <div class="row">
       {% for job in Jobs %}
-        {% include 'jobitem.html' %}
+        <div class="col-md-4 mb-4">
+          <div class="job-item">
+            {% include 'jobitem.html' %}
+          </div>
+        </div>
       {% endfor %}
     </div>
 
-    <div class="text-center">
+    <!-- Contact Us Button -->
+    <div class="text-center mt-4">
       <button type="button" class="btn btn-primary">Contact Us</button>
     </div>
-    
-    <footer class="text-center mt-4">
-      <p>&copy; 2025 NextGen</p>
-    </footer>
-  </div> <!-- End of container -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-4">
+    <p>&copy; 2025 NextGen Careers</p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qY7/qREv1jsJ0gA0n2yk1olpJ8F9bfxuD9y4cPfj34C2W5NMEb7sbEoM13PiTCOh" crossorigin="anonymous"></script>
 </body>
